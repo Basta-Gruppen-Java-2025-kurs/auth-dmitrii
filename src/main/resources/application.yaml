@@ -1,8 +1,20 @@
 spring:
   application:
-    name: authOne
+    name: "Game Library"
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: ${DATABASE_DRIVER:}
+    url: ${DATABASE_URL:jdbc:mysql://localhost:3306/gamelib}
+    username: ${DATABASE_USER:root}
+    password: ${DATABASE_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: create
+
 server:
   port: 8080
 
 app:
   welcome-message: "Auth in da haus"
+
