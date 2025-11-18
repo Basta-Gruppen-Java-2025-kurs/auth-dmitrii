@@ -1,3 +1,8 @@
 spring:
   application:
     name: authOne
+server:
+  port: 8080
+
+app:
+  welcome-message: "Auth in da haus"
