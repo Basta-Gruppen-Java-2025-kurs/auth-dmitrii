@@ -1,0 +1,224 @@
+type: collection.insomnia.rest/5.0
+name: auth & game lib
+meta:
+  id: wrk_406c50780a9e4858990975df928e53bc
+  created: 1763456825201
+  modified: 1763501427045
+  description: ""
+collection:
+  - url: ""
+    name: books
+    meta:
+      id: req_993c6bf8fba4422796a327a311168cd0
+      created: 1763456825208
+      modified: 1763456841625
+      isPrivate: false
+      description: ""
+      sortKey: -1763456825208
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/private/secret
+    name: secret check
+    meta:
+      id: req_b97751ea2aa841e4a26ac847f5e50f15
+      created: 1763462352648
+      modified: 1763462443728
+      isPrivate: false
+      description: ""
+      sortKey: -1763462352648
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: student
+      password: password
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/games
+    name: add game
+    meta:
+      id: req_99d578fd1c0a4f46a094408d7d637e8a
+      created: 1763501406214
+      modified: 1763568915052
+      isPrivate: false
+      description: ""
+      sortKey: -1763567688640
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "Goat Simulatpr",
+        	"genre": "action",
+        	"releaseYear": 2014
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: admin
+      password: admin
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/public/hello
+    name: hello
+    meta:
+      id: req_2729ec7d8f924f1ead0f9f5ff93517e7
+      created: 1763567688440
+      modified: 1763567811753
+      isPrivate: false
+      description: ""
+      sortKey: -1763567688440
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: student
+      password: password
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/public/ehlo
+    name: ehlo
+    meta:
+      id: req_47955f902da849ec9df5285dd723116e
+      created: 1763567819967
+      modified: 1763568246925
+      isPrivate: false
+      description: ""
+      sortKey: -1763567688490
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: student
+      password: password
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/games/2
+    name: game by id
+    meta:
+      id: req_6f6aa3f5d324442fabbebf609f905fa5
+      created: 1763568241226
+      modified: 1763568258165
+      isPrivate: false
+      description: ""
+      sortKey: -1763567688540
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: test
+      password: test
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/games
+    name: games
+    meta:
+      id: req_6c3bbda02b52412b9628d297f4ff498b
+      created: 1763568464207
+      modified: 1763568464207
+      isPrivate: false
+      description: ""
+      sortKey: -1763481879431
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/12.0.0
+    authentication:
+      type: basic
+      useISO88591: false
+      disabled: false
+      username: test
+      password: test
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e1b8e7c510106898ad9fadda26c65d0fef3222ae
+    created: 1763456825206
+    modified: 1763567702121
+  cookies:
+    - key: JSESSIONID
+      value: A9C5D37411E94251A88AAAF61C2CFADA
+      domain: localhost
+      path: /
+      httpOnly: true
+      hostOnly: true
+      creation: 2025-11-18T10:39:33.977Z
+      lastAccessed: 2025-11-19T15:55:02.120Z
+      id: 6d7d291b-3f58-47eb-bf22-35744c4f9962
+environments:
+  name: Base Environment
+  meta:
+    id: env_e1b8e7c510106898ad9fadda26c65d0fef3222ae
+    created: 1763456825203
+    modified: 1763456825203
+    isPrivate: false

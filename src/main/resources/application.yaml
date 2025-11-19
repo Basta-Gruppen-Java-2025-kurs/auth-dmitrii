@@ -1,3 +1,9 @@
+app:
+  welcome-message: "Auth in da haus"
+
+server:
+  port: 8080
+
 spring:
   application:
     name: "Game Library"
@@ -8,13 +14,12 @@ spring:
     url: ${DATABASE_URL:jdbc:mysql://localhost:3306/gamelib}
     username: ${DATABASE_USER:root}
     password: ${DATABASE_PASSWORD:password}
+  sql:
+    init:
+      mode: always
   jpa:
     hibernate:
       ddl-auto: create
-
-server:
-  port: 8080
-
-app:
-  welcome-message: "Auth in da haus"
-
+    defer-datasource-initialization: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect

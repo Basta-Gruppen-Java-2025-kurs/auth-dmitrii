@@ -3,10 +3,8 @@ package se.dimage.authOne.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import se.dimage.authOne.dto.GameRequestDTO;
 import se.dimage.authOne.dto.GameResponseDTO;
 import se.dimage.authOne.service.GameService;
 
@@ -28,5 +26,10 @@ public class GameController {
     @GetMapping("/{id}")
     public ResponseEntity<GameResponseDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
+    }
+
+    @PostMapping
+    public ResponseEntity<GameResponseDTO> addGame(@RequestBody GameRequestDTO requestDTO) {
+        return ResponseEntity.ok(service.addGame(requestDTO));
     }
 }

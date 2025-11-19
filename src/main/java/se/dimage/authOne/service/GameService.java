@@ -2,6 +2,7 @@ package se.dimage.authOne.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import se.dimage.authOne.dto.GameRequestDTO;
 import se.dimage.authOne.dto.GameResponseDTO;
 import se.dimage.authOne.exception.ResourceNotFoundException;
 import se.dimage.authOne.mapper.GameMapper;
@@ -21,5 +22,9 @@ public class GameService {
 
     public GameResponseDTO findById(Long id) throws ResourceNotFoundException {
         return repository.findById(id).map(mapper::toResponseDTO).orElseThrow(ResourceNotFoundException::new);
+    }
+
+    public GameResponseDTO addGame(GameRequestDTO requestDTO) {
+        return mapper.toResponseDTO(repository.save(mapper.toEntity(requestDTO)));
     }
 }
